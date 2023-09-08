@@ -4,6 +4,7 @@
       "entries": [
         {
           "image": "/CACI_International_logo.svg",
+          "bgColor": "white",
           "header": "CACI International Inc.",
           "subHeader": "Full Stack Software Engineer",
           "keypoints": [
@@ -13,6 +14,19 @@
             "Stack: JavaScript, NodeJS, Python, PostgreSQL, Java"
         ],
           "dates": "Feb. 2021 - Present"
+        },
+        {
+          "image": "/UL.png",
+          "bgColor": "white",
+          "header": "University of Lynchburg",
+          "subHeader": "CS Dept Linux/Unix Internship",
+          "keypoints": [
+            "Ensured department Linux machines were up to date with latest security updates.",
+            "Maintained department website, including backups, migrations, security, and all site updates.",
+            "Wrote scripts in both Bash and Perl which were executed for every new user created on the machine as part of user account management.",
+            "Worked with in a team with one other intern to carry out any administration tasks set out by professor during the week."
+          ],
+          "dates": "Aug.2019 - Nov. 2020"
         }
       ]
     },
@@ -20,9 +34,9 @@
       "header": "Education",
       "entries": [
         {
-          "image": "/TODO GET COMPANY IMAGE",
+          "image": "/UL.png",
           "header": "University of Lynchburg",
-          "subHeader": "B.S. in Computer Science",
+          "subHeader": "B.S. of Computer Science",
           "dates": "Aug. 2013 - Nov. 2020"
         }
       ]

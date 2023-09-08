@@ -15,7 +15,8 @@ interface resumeEntry {
   subHeader?: string
   description?: string
   keypoints?: string[]
-  dates?: string
+  dates?: string,
+  bgColor?: string,
 }
 
 interface resumeSection {
@@ -65,7 +66,7 @@ function ResumeSection ({section}: {section: resumeSection}) {
   }
   return (
     <li key={section.header} className="my-8 p-20">
-      <h2 className="mb-4">{section.header}</h2>
+      <h2 className="mb-10 text-2xl highlight">{section.header}</h2>
       <ul className="section relative border-l border-gray-200 dark:border-gray-700">{entries}</ul>
     </li>
   )
@@ -79,15 +80,15 @@ function ResumeEntry ({ entry }: {entry: resumeEntry}) {
     }
   }
   return (
-    <li class="mb-10 ml-6">
-        <span class="relative flex items-center justify-center w-28 h-28 bg-white rounded-full left-[-79px] ring-4 ring-white dark:ring-gray-900 dark:bg-white">
+    <li className="mb-10 ml-6">
+        <span className={`relative flex items-center justify-center w-28 h-28 bg-${entry.bgColor} rounded-full left-[-79px] ring-4 ring-white dark:ring-gray-900 dark:bg-${entry.bgColor}`}>
             <a href={entry.link}>
               <Image fill={true} src={entry.image} alt={"Image for " + entry.header} />
             </a>
         </span>
-        <h3 class="mb-1 text-lg font-semibold text-gray-900 dark:text-white">Flowbite Figma v1.3.0</h3>
-        <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Released on December 7th, 2021</time>
-        <p class="text-base font-normal text-gray-500 dark:text-gray-400">All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.</p>
+        <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">{entry.header}</h3>
+        <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{entry.subHeader}</time>
+        <p className="text-base font-normal text-gray-500 dark:text-gray-400">{points}</p>
     </li>
   )
 }
