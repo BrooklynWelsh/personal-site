@@ -1,0 +1,39 @@
+[
+    {
+      "header": "Experience",
+      "entries": [
+        {
+          "image": "/TODO GET COMPANY IMAGE",
+          "header": "CACI International Inc.",
+          "subHeader": "Full Stack Software Engineer",
+          "keypoints": [
+            "Led a team of 3 interns on a scheduling and event visualization app for CACI customer which led to extended contracts and extra funding for the company. Conducted code reviews, made architectural decisions, and implemented key requested features.",
+            "Pioneered a proof of concept app which integrated external services and API’s with a rapidly developing internal Cyber Operations program which directly led to more CACI contracts with the DoD customer. Communicated with application dev team leaders to stay informed on architecture, request or clarify app capabilities, and submit bug reports.",
+            "",
+            "Stack: JavaScript, NodeJS, Python, PostgreSQL, Java"
+        ],
+          "dates": "Feb. 2021 - Present"
+        }
+      ]
+    },
+    {
+      "header": "Education",
+      "entries": [
+        {
+          "image": "/TODO GET COMPANY IMAGE",
+          "header": "University of Lynchburg",
+          "subHeader": "B.S. in Computer Science",
+          "dates": "Aug. 2013 - Nov. 2020"
+        }
+      ]
+    }, 
+    {
+      "header": "Personal Projects",
+      "entries": [
+        {
+          "header": "Personal Website",
+          "description": ""
+        }
+      ]
+    }
+  ]

@@ -1,12 +1,30 @@
-'use client'
 import Image from 'next/image'
-import { Avatar } from 'flowbite-react'
+import resumeSections from '../public/resume.json'
+import fs, { PathLike } from 'fs'
 
 interface iconOptions {
   filePath: string,
   altText: string,
   width: number,
   rounded: boolean
+}
+
+interface resumeEntry {
+  image?: PathLike
+  header: string
+  subHeader?: string
+  description?: string
+  keypoints?: string[]
+  dates?: string
+}
+
+interface resumeSection {
+  header: string
+  entries: resumeEntry[]
+}
+
+function checkImageFile(filePath: string) {
+  return fs.existsSync(filePath)
 }
 
 function ResumeIcon({ options }: {options: iconOptions}) {
@@ -21,7 +39,7 @@ function ResumeIcon({ options }: {options: iconOptions}) {
 
 function Hero() {
   return (
-    <div className="hero">
+    <div className="hero highlight">
       <div className="hero-content text-center">
         <div className="max-w-md">
           <h1 className="text-5xl font-bold">Full Stack Software Engineer</h1>
@@ -32,9 +50,67 @@ function Hero() {
   )
 }
 
+function Resume() {
+  const sections = []
+  for (const section of resumeSections) {
+    sections.push(ResumeSection({section}))
+  }
+  return (
+    <div>
+      <ul>{sections}</ul>
+    </div>
+  )
+}
+
+function ResumeSection ({section}: {section: resumeSection}) {
+  const entries = []
+  for (const entry of section.entries) {
+    if (entry.image && !fs.existsSync(entry.image)) entry.image = undefined
+    entries.push(ResumeEntry({entry}))
+  }
+  return (
+    <section key={section.header}>
+      <h2 className="mb-4">{section.header}</h2>
+      <ul>{entries}</ul>
+    </section>
+  )
+}
+
+function ResumeEntry ({ entry }: {entry: resumeEntry}) {
+  const points = []
+  if (entry.keypoints) {
+    for (const point of entry.keypoints) {
+      points?.push(KeyPoint({point}))
+    }
+  }
+  return (
+    <li className="section" key={entry.header}>
+      <div className="header">
+        {
+        entry.image ? 
+        <a>
+          <Image fill={true} alt={entry.header} src={entry.image || ''}/>
+        </a> : 
+        null
+        }
+        <div>{entry.header}</div>
+        <div>{entry.subHeader}</div>
+      </div>
+      <ul className="points">{points}</ul>
+      <p className="dates">{entry.dates}</p>
+    </li>
+  )
+}
+
+function KeyPoint({ point }: {point: string}) {
+  return (
+    <li className="my-8 before:bg-[url('data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' viewBox='0 0 32 32' focusable='false'%3E%3Ccircle stroke='none' fill='%23c00' cx='16' cy='16' r='10'%3E%3C/circle%3E%3C/svg%3E')]before:content-['HEHEHEHE'] before:bg-[#c00] before:absolute before:top-0 before:left-0 before:width-3px after:content-[''] after:absolute after:left-0 after:top-2px after:h-12px after:w-12px">{point}</li>
+  )
+}
+
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-between p-10 dark:bg-zinc-950 dark:text-gray-400">
+    <main className="flex flex-col items-center justify-between m-14 p-10 dark:bg-zinc-950 dark:text-gray-400">
       <div className="z-10 m-auto mb-10 flex-nowrap max-w-100 w-full h-15 justify-around font-mono text-sm lg:flex">
         <div className="flex flex-col md:flex-row items-center">
           <ResumeIcon options={{filePath: "/headshot.jpg", altText:"Photo of Brooklyn Welsh", width: 125, rounded: true}}/>
@@ -79,6 +155,8 @@ export default function Home() {
       </div>
 
       <Hero />
+
+      <Resume />
     </main>
   )
 }
