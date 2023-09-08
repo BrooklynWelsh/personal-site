@@ -4,6 +4,7 @@
       "entries": [
         {
           "image": "/CACI_International_logo.svg",
+          "link": "N/A",
           "bgColor": "white",
           "header": "CACI International Inc.",
           "subHeader": "Full Stack Software Engineer",
@@ -21,6 +22,7 @@
         },
         {
           "image": "/UL.png",
+          "link": "N/A",
           "bgColor": "white",
           "header": "University of Lynchburg",
           "subHeader": "CS Dept Linux/Unix Internship",
@@ -40,6 +42,7 @@
       "entries": [
         {
           "image": "/UL.png",
+          "link": "N/A",
           "bgColor": "white",
           "header": "University of Lynchburg",
           "subHeader": "B.S. of Computer Science",
