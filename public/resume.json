@@ -10,7 +10,11 @@
           "keypoints": [
             "Led a team of 3 interns on a scheduling and event visualization app for CACI customer which led to extended contracts and extra funding for the company. Conducted code reviews, made architectural decisions, and implemented key requested features.",
             "Pioneered a proof of concept app which integrated external services and API’s with a rapidly developing internal Cyber Operations program which directly led to more CACI contracts with the DoD customer. Communicated with application dev team leaders to stay informed on architecture, request or clarify app capabilities, and submit bug reports.",
-            "",
+            "Developed an app with a team in an Agile/Scrum environment, allows mission planners to create intricate radio communication plans on a horizontal timeline via a frontend app or API calls. Utilizes SQL stored procedures, functions, triggers, etc. to ensure efficient and strict adherence to unit/radio relationships",
+            "Created a Svelte/SvelteKit web app which takes in a custom GDL language file containing tree graph data, parses it into valid JSON, and displays an interactive Echarts graph visualization. Parsing from GDL to JSON saved development time and delivered several features to the customer sooner than projected.",
+            "Implemented a large suite of unit and integration tests on an existing CACI project using Mocha and Sinon. Wrote Selenium tests to ensure functionality of the frontend and led effort to begin utilizing Test Driven Development (TDD) on all future development on the app.",
+            "Created a suite of Python scripts which reads in a remote PostgreSQL Greenplum database schema and generates randomized queries categorized by runtime complexity, and runs them against the database while gathering performance data. Used in a research and development project comparing cutting edge Intel processor speeds on very large datasets.",
+            "Updated the Webpack build system of inherited company project, deleted unnecessary plugins and configs, minified dependencies, and migrated from CSS to LESS, drastically reducing build times and repository size.",
             "Stack: JavaScript, NodeJS, Python, PostgreSQL, Java"
         ],
           "dates": "Feb. 2021 - Present"
@@ -24,7 +28,8 @@
             "Ensured department Linux machines were up to date with latest security updates.",
             "Maintained department website, including backups, migrations, security, and all site updates.",
             "Wrote scripts in both Bash and Perl which were executed for every new user created on the machine as part of user account management.",
-            "Worked with in a team with one other intern to carry out any administration tasks set out by professor during the week."
+            "Worked with in a team with one other intern to carry out any administration tasks set out by professor during the week.",
+            "Languages/Tools used: Bash, Linux, Perl, PHP, Python, VirtualBox VM"
           ],
           "dates": "Aug.2019 - Nov. 2020"
         }
@@ -35,6 +40,7 @@
       "entries": [
         {
           "image": "/UL.png",
+          "bgColor": "white",
           "header": "University of Lynchburg",
           "subHeader": "B.S. of Computer Science",
           "dates": "Aug. 2013 - Nov. 2020"

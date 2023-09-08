@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import resumeSections from '../public/resume.json'
-import fs, { PathLike } from 'fs'
+import { PathLike } from 'fs'
+import resumeData from '../public/resume.json'
 
 interface iconOptions {
   filePath: string,
@@ -9,8 +9,9 @@ interface iconOptions {
   rounded: boolean
 }
 
-interface resumeEntry {
+interface ResumeEntry {
   image?: PathLike
+  link?: URL,
   header: string
   subHeader?: string
   description?: string
@@ -19,9 +20,9 @@ interface resumeEntry {
   bgColor?: string,
 }
 
-interface resumeSection {
+interface ResumeSection {
   header: string
-  entries: resumeEntry[]
+  entries: ResumeEntry[]
 }
 
 function ResumeIcon({ options }: {options: iconOptions}) {
@@ -47,9 +48,9 @@ function Hero() {
   )
 }
 
-function Resume() {
+function Resume({ resume }: { resume: ResumeSection[] }) {
   const sections = []
-  for (const section of resumeSections) {
+  for (const section of resume) {
     sections.push(ResumeSection({section}))
   }
   return (
@@ -59,7 +60,7 @@ function Resume() {
   )
 }
 
-function ResumeSection ({section}: {section: resumeSection}) {
+function ResumeSection ({section}: {section: ResumeSection}) {
   const entries = []
   for (const entry of section.entries) {
     entries.push(ResumeEntry({entry}))
@@ -72,7 +73,7 @@ function ResumeSection ({section}: {section: resumeSection}) {
   )
 }
 
-function ResumeEntry ({ entry }: {entry: resumeEntry}) {
+function ResumeEntry ({ entry }: {entry: ResumeEntry}) {
   const points = []
   if (entry.keypoints) {
     for (const point of entry.keypoints) {
@@ -81,14 +82,19 @@ function ResumeEntry ({ entry }: {entry: resumeEntry}) {
   }
   return (
     <li className="mb-10 ml-6">
-        <span className={`relative flex items-center justify-center w-28 h-28 bg-${entry.bgColor} rounded-full left-[-79px] ring-4 ring-white dark:ring-gray-900 dark:bg-${entry.bgColor}`}>
+      <div className="flex items-center">
+        <span className={`relative shrink-0 w-28 h-28 bg-${entry.bgColor} rounded-full left-[-79px] ring-4 ring-white dark:ring-gray-900 dark:bg-${entry.bgColor}`}>
             <a href={entry.link}>
               <Image fill={true} src={entry.image} alt={"Image for " + entry.header} />
             </a>
         </span>
-        <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">{entry.header}</h3>
-        <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{entry.subHeader}</time>
-        <p className="text-base font-normal text-gray-500 dark:text-gray-400">{points}</p>
+        <div className="w-full">
+          <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">{entry.header}</h3>
+          <hr className="invisible w-full" />
+          <h4 className="block mb-2 text-xs md:text-md font-normal leading-none text-gray-400 dark:text-gray-500">{entry.subHeader}</h4>
+        </div>
+      </div>
+      {points.length > 0 && <ul>{points}</ul>}
     </li>
   )
 }
@@ -99,7 +105,7 @@ function KeyPoint({ point }: {point: string}) {
   )
 }
 
-export default function Home() {
+export default async function Home() {
   return (
     <main className="flex flex-col items-center justify-between m-14 p-10 dark:bg-zinc-950 dark:text-gray-400">
       <div className="z-10 m-auto mb-10 flex-nowrap max-w-100 w-full h-15 justify-around font-mono text-sm lg:flex">
@@ -147,7 +153,7 @@ export default function Home() {
 
       <Hero />
 
-      <Resume />
+      <Resume resume={resumeData}/>
     </main>
   )
 }
