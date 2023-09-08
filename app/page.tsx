@@ -39,7 +39,7 @@ function Hero() {
   return (
     <div className="hero highlight">
       <div className="hero-content text-center">
-        <div className="max-w-md">
+        <div className="max-w-prose">
           <h1 className="text-5xl font-bold">Full Stack Software Engineer</h1>
           <p className="py-6">Currently working at CACI International building web apps with JavaScript/TypeScript, NodeJS, PostgreSQL and many other web technologies.</p>
         </div>
@@ -66,8 +66,8 @@ function ResumeSection ({section}: {section: ResumeSection}) {
     entries.push(ResumeEntry({entry}))
   }
   return (
-    <li key={section.header} className="my-8 p-20">
-      <h2 className="mb-10 text-2xl highlight">{section.header}</h2>
+    <li key={section.header} className="my-12 px-8 md:px-20">
+      <h2 className="mb-10 text-xl md:text-2xl highlight">{section.header}</h2>
       <ul className="section relative border-l border-gray-200 dark:border-gray-700">{entries}</ul>
     </li>
   )
@@ -88,10 +88,10 @@ function ResumeEntry ({ entry }: {entry: ResumeEntry}) {
               <Image fill={true} src={entry.image} alt={"Image for " + entry.header} />
             </a>
         </span>
-        <div className="w-full">
-          <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">{entry.header}</h3>
+        <div className="relative left-[-79px] w-full mx-8">
+          <h3 className="mb-1 text-md md:text-xl font-semibold text-gray-900 dark:text-white">{entry.header}</h3>
           <hr className="invisible w-full" />
-          <h4 className="block mb-2 text-xs md:text-md font-normal leading-none text-gray-400 dark:text-gray-500">{entry.subHeader}</h4>
+          <h4 className="block mb-2 text-sm md:text-lg font-normal leading-none text-gray-400 dark:text-gray-500">{entry.subHeader}</h4>
         </div>
       </div>
       {points.length > 0 && <ul>{points}</ul>}
@@ -153,6 +153,7 @@ export default async function Home() {
 
       <Hero />
 
+      <p>Download PDF version of my resume here (not yet implemented)</p>
       <Resume resume={resumeData}/>
     </main>
   )
