@@ -55,7 +55,9 @@
       "entries": [
         {
           "header": "Personal Website",
-          "description": ""
+          "keypoints": [
+            "Statically generated with React, NextJS, and TailwindCSS."
+          ]
         }
       ]
     }

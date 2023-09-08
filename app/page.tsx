@@ -116,34 +116,26 @@ function HamburgerMenu() {
 			  <svg id="svg-menu" className="w-6 fill-white mt-[0.3rem]" viewBox="0 0 448 512" width="100"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" /></svg>
 			  <svg id="svg-close" className="w-6 fill-white hidden" viewBox="0 0 384 512" width="100"><path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z" /></svg>
 		  </label>
-        <div className="nav-Menu hidden m-4 md:sticky md:flex md:flex-row w-full md:w-3/6 bottom-0 left-0 flex items-center lg:static lg:h-auto lg:bg-none">
+        <div className="nav-Menu hidden lg:m-0 md:sticky md:flex md:flex-row w-full bottom-0 left-0 flex items-center lg:h-auto lg:bg-none">
           <a
-            className="pointer-events-none hidden m-1 gap-0 md:gap-8 p-0 md:p-8 lg:pointer-events-auto "
-            href="https://"
+            className="pointer-events-none hidden md:block m-1 gap-0 md:gap-8 p-0 md:p-8 lg:pointer-events-auto "
+            href="https://github.com/BrooklynWelsh"
             target="_blank"
             rel="noopener noreferrer"
           >
             Github
           </a>
           <a
-            className="pointer-events-none hidden m-1 gap-0 md:gap-8 p-0 md:p-8 lg:pointer-events-auto "
-            href="https://"
+            className="pointer-events-none hidden md:block m-1 gap-0 md:gap-8 p-0 md:p-8 lg:pointer-events-auto "
+            href="https://www.linkedin.com/in/brooklyn-welsh"
             target="_blank"
             rel="noopener noreferrer"
           >
             LinkedIn
           </a>
           <a
-            className="pointer-events-none hidden m-1 gap-0 md:gap-8 p-0 md:p-8 lg:pointer-events-auto "
-            href="https://"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            StackOverflow
-          </a>
-          <a
-            className="pointer-events-none hidden m-1 gap-0 md:gap-8 p-0 md:p-8 lg:pointer-events-auto "
-            href="https://"
+            className="pointer-events-none hidden md:block m-1 gap-0 md:gap-8 p-0 md:p-8 lg:pointer-events-auto "
+            href="mailto:brooklyn_welsh@outlook.com"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -156,60 +148,13 @@ function HamburgerMenu() {
 
 function Nav() {
   return (
-    <div className="z-10 m-auto mb-10 flex-nowrap max-w-100 w-full h-15 justify-around font-mono text-sm lg:flex">
+    <div className="z-10 m-auto mb-10 flex-nowrap md:flex-wrap md:flex md:flex-col-reverse md:items-center lg:flex-row-reverse lg:flex-nowrap max-w-100 w-full h-15 justify-around font-mono text-sm">
       <HamburgerMenu />
-        <div className="flex flex-col md:flex-row items-center">
+        <div className="flex flex-col md:flex-row items-center align-center justify-center">
           <ResumeIcon options={{filePath: "/headshot.jpg", altText:"Photo of Brooklyn Welsh", width: 125, rounded: true}}/>
-          <div className="sticky p-8 w-auto flex items-center">
+          <div className="sticky p-8 w-auto flex items-center whitespace-nowrap">
             <h1 className="text-3xl w-auto text-center highlight">Brooklyn Welsh</h1>
           </div>
-        </div>
-    </div>
-  )
-}
-
-function OldNav() {
-  return (
-    <div className="z-10 m-auto mb-10 flex-nowrap max-w-100 w-full h-15 justify-around font-mono text-sm lg:flex">
-        <div className="flex flex-col md:flex-row items-center">
-          <ResumeIcon options={{filePath: "/headshot.jpg", altText:"Photo of Brooklyn Welsh", width: 125, rounded: true}}/>
-          <div className="sticky p-8 w-auto flex items-center">
-            <h1 className="text-3xl w-auto text-center highlight">Brooklyn Welsh</h1>
-          </div>
-        </div>
-        <div className="sticky flex flex-col md:flex-row w-full md:w-3/6 bottom-0 left-0 flex items-center lg:static lg:h-auto lg:bg-none">
-          <a
-            className="m-1 gap-0 md:gap-8 p-0 md:p-8 lg:pointer-events-auto "
-            href="https://"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Github
-          </a>
-          <a
-            className="m-1 gap-0 md:gap-8 p-0 md:p-8 lg:pointer-events-auto "
-            href="https://"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn
-          </a>
-          <a
-            className="m-1 gap-0 md:gap-8 p-0 md:p-8 lg:pointer-events-auto "
-            href="https://"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            StackOverflow
-          </a>
-          <a
-            className="m-1 gap-0 md:gap-8 p-0 md:p-8 lg:pointer-events-auto "
-            href="https://"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Email
-          </a>
         </div>
     </div>
   )
