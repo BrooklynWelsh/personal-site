@@ -23,10 +23,6 @@ interface resumeSection {
   entries: resumeEntry[]
 }
 
-function checkImageFile(filePath: string) {
-  return fs.existsSync(filePath)
-}
-
 function ResumeIcon({ options }: {options: iconOptions}) {
   return (
     <div className="avatar">
@@ -65,14 +61,13 @@ function Resume() {
 function ResumeSection ({section}: {section: resumeSection}) {
   const entries = []
   for (const entry of section.entries) {
-    if (entry.image && !fs.existsSync(entry.image)) entry.image = undefined
     entries.push(ResumeEntry({entry}))
   }
   return (
-    <section key={section.header}>
+    <li key={section.header} className="my-8 p-20">
       <h2 className="mb-4">{section.header}</h2>
-      <ul>{entries}</ul>
-    </section>
+      <ul className="section relative border-l border-gray-200 dark:border-gray-700">{entries}</ul>
+    </li>
   )
 }
 
@@ -84,27 +79,22 @@ function ResumeEntry ({ entry }: {entry: resumeEntry}) {
     }
   }
   return (
-    <li className="section" key={entry.header}>
-      <div className="header">
-        {
-        entry.image ? 
-        <a>
-          <Image fill={true} alt={entry.header} src={entry.image || ''}/>
-        </a> : 
-        null
-        }
-        <div>{entry.header}</div>
-        <div>{entry.subHeader}</div>
-      </div>
-      <ul className="points">{points}</ul>
-      <p className="dates">{entry.dates}</p>
+    <li class="mb-10 ml-6">
+        <span class="relative flex items-center justify-center w-28 h-28 bg-white rounded-full left-[-79px] ring-4 ring-white dark:ring-gray-900 dark:bg-white">
+            <a href={entry.link}>
+              <Image fill={true} src={entry.image} alt={"Image for " + entry.header} />
+            </a>
+        </span>
+        <h3 class="mb-1 text-lg font-semibold text-gray-900 dark:text-white">Flowbite Figma v1.3.0</h3>
+        <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">Released on December 7th, 2021</time>
+        <p class="text-base font-normal text-gray-500 dark:text-gray-400">All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project.</p>
     </li>
   )
 }
 
 function KeyPoint({ point }: {point: string}) {
   return (
-    <li className="my-8 before:bg-[url('data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' viewBox='0 0 32 32' focusable='false'%3E%3Ccircle stroke='none' fill='%23c00' cx='16' cy='16' r='10'%3E%3C/circle%3E%3C/svg%3E')]before:content-['HEHEHEHE'] before:bg-[#c00] before:absolute before:top-0 before:left-0 before:width-3px after:content-[''] after:absolute after:left-0 after:top-2px after:h-12px after:w-12px">{point}</li>
+    <li className="my-8"><span>{point}</span></li>
   )
 }
 
