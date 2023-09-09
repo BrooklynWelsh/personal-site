@@ -11,7 +11,7 @@ interface iconOptions {
 
 interface ResumeEntry {
   image?: PathLike
-  link?: URL,
+  link?: string,
   header: string
   subHeader?: string
   description?: string
@@ -168,9 +168,9 @@ function HamburgerMenu() {
   )
 }
 
-function Nav(props: object) {
+function Nav() {
   return (
-    <div className={`z-10 dark:bg-gradient-to-r dark:from-blue-950 dark:to-blue-900  min-w-0 m-auto md:py-5  px-4 lg:px-20 xl:px-40 2xl:px-52 3xl:px-96 flex-nowrap md:flex-wrap md:flex md:flex-col-reverse md:items-center sticky top-0 lg:flex-row-reverse lg:flex-nowrap max-w-100 w-full h-full lg:h-15 justify-between text-sm ${props.className} `}>
+    <div className="z-10 dark:bg-gradient-to-r dark:from-blue-950 dark:to-blue-900  min-w-0 m-auto md:py-5  px-4 lg:px-20 xl:px-40 2xl:px-52 3xl:px-96 flex-nowrap md:flex-wrap md:flex md:flex-col-reverse md:items-center sticky top-0 lg:flex-row-reverse lg:flex-nowrap max-w-100 w-full h-full lg:h-15 justify-between text-sm">
       <HamburgerMenu />
         <div className="flex min-w-0 flex-col md:flex-row items-center align-center justify-center lg:shrink">
           <ResumeIcon options={{filePath: "/headshot.jpg", altText:"Photo of Brooklyn Welsh", width: 125, rounded: true}}/>
