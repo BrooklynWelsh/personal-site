@@ -57,8 +57,21 @@
       "entries": [
         {
           "header": "Personal Website",
+          "image": "/personal-site.png",
           "keypoints": [
             "Statically generated with React, NextJS, and TailwindCSS."
+          ]
+        },
+        {
+          "header": "Crumbled Cakery LLC. Website (In-Progress)",
+          "image": "/crumbled-cakery.svg",
+          "bgColor": "white",
+          "keypoints": [
+            "Made with Svelte/Sveltekit, TypeScript, and PostCSS.",
+            "Deployed on the edge/serverless with Cloudflare Pages.",
+            "Integration with Storyblok headless CMS to allow editing of content by customer.",
+            "(Upcoming) Will integrate with payment processors to allow purchases on site.",
+            "(Upcoming) Will automatically email receipts to both the customer and the site owner."
           ]
         }
       ]
