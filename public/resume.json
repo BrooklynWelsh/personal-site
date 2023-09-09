@@ -4,7 +4,7 @@
       "entries": [
         {
           "image": "/CACI_International_logo.svg",
-          "link": "N/A",
+          "link": "https://www.caci.com/",
           "bgColor": "white",
           "header": "CACI International Inc.",
           "subHeader": "Full Stack Software Engineer",
@@ -24,7 +24,7 @@
         },
         {
           "image": "/UL.png",
-          "link": "N/A",
+          "link": "https://www.lynchburg.edu/",
           "header": "University of Lynchburg",
           "bgColor": "white",
           "round": "full",
@@ -45,7 +45,7 @@
       "entries": [
         {
           "image": "/UL.png",
-          "link": "N/A",
+          "link": "https://www.lynchburg.edu/",
           "bgColor": "white",
           "round": "full",
           "header": "University of Lynchburg",

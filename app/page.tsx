@@ -101,7 +101,7 @@ function ResumeEntry ({ entry }: {entry: ResumeEntry}) {
           null
         }
         <div className="relative left-[-79px] w-full mx-8">
-          <h3 className="mb-1 text-md md:text-xl font-semibold text-gray-900 dark:text-white">{entry.header}</h3>
+          <h3 className="mb-1 text-md md:text-xl font-semibold text-gray-900 dark:text-white"> {entry.link ? <a href={entry.link.toString()}> {entry.header} </a> : entry.header} </h3>
           <hr className="invisible w-full" />
           <h4 className="block mb-2 text-sm md:text-lg font-semibold leading-none text-gray-400">{entry.subHeader}{entry.dates ? ' | ' + entry.dates : null}</h4>
         </div>
