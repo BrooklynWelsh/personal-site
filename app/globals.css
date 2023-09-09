@@ -6,6 +6,10 @@
   .highlight {
     @apply text-gray-200;
   }
+
+  .link {
+    @apply underline decoration-dotted hover:decoration-solid;
+  }
 }
 
 @font-face {

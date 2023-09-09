@@ -61,7 +61,8 @@
           "header": "Personal Website",
           "image": "/personal-site.png",
           "keypoints": [
-            "Static website generated with NextJS and TailwindCSS."
+            "Static website generated with NextJS and TailwindCSS.",
+            "Hosted with Github Pages."
           ]
         },
         {

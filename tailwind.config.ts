@@ -17,8 +17,11 @@ const config: Config = {
       },
       fontFamily: {
         'metropolis': ['Metropolis', 'Open Sans', 'sans-serif']
+      },
+      screens: {
+        '3xl': '2560px',
       }
-    },
+    }
   },
   plugins: [
     require("daisyui"),
