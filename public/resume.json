@@ -25,9 +25,10 @@
         {
           "image": "/UL.png",
           "link": "N/A",
-          "bgColor": "white",
           "header": "University of Lynchburg",
-          "subHeader": "CS Dept Linux/Unix Internship",
+          "bgColor": "white",
+          "round": "full",
+          "subHeader": "CS Dept. Linux/Unix Internship",
           "keypoints": [
             "Ensured department Linux machines were up to date with latest security updates.",
             "Maintained department website, including backups, migrations, security, and all site updates.",
@@ -46,9 +47,10 @@
           "image": "/UL.png",
           "link": "N/A",
           "bgColor": "white",
+          "round": "full",
           "header": "University of Lynchburg",
           "subHeader": "B.S. of Computer Science",
-          "dates": "Aug. 2013 - Nov. 2020"
+          "dates": "Graduated Nov. 2020"
         }
       ]
     }, 
@@ -59,7 +61,7 @@
           "header": "Personal Website",
           "image": "/personal-site.png",
           "keypoints": [
-            "Statically generated with React, NextJS, and TailwindCSS."
+            "Static website generated with NextJS and TailwindCSS."
           ]
         },
         {

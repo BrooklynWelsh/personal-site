@@ -8,25 +8,78 @@
   }
 }
 
+@font-face {
+  font-family: "Metropolis";
+  src: url('/fonts/WOFF2/Metropolis-Regular.woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
-  #nav-Checkbox:checked ~ div > div.nav-Menu li,
-  #nav-Checkbox:checked ~ div > div.nav-Menu a,
-  #nav-Checkbox:checked ~ label#nav-Toggle #svg-close {
-    @apply block;
-  }
-  #nav-Checkbox:checked ~ label#nav-Toggle #svg-menu {
+/* src: url('/fonts/WOFF2/Metropolis-Black.woff2');
+  src: url('/fonts/WOFF2/Metropolis-BlackItalic.woff2');
+  src: url('/fonts/WOFF2/Metropolis-Bold.woff2');
+  src: url('/fonts/WOFF2/Metropolis-BoldItalic.woff2');
+  src: url('/fonts/WOFF2/Metropolis-ExtraBold.woff2');
+  src: url('/fonts/WOFF2/Metropolis-ExtraLight.woff2');
+  src: url('/fonts/WOFF2/Metropolis-Medium.woff2');
+  src: url('/fonts/WOFF2/Metropolis-MediumItalic.woff2');
+  src: url('/fonts/WOFF2/Metropolis-RegularItalic.woff2'); */
+
+@font-face {
+  font-family: "Metropolis";
+  src: url('/fonts/WOFF2/Metropolis-SemiBold.woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Metropolis";
+  src: url('/fonts/WOFF2/Metropolis-Bold.woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Metropolis";
+  src: url('/fonts/WOFF2/Metropolis-ExtraBold.woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Metropolis";
+  src: url('/fonts/WOFF2/Metropolis-Medium.woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  @apply font-metropolis;
+}
+
+#nav-Checkbox:checked ~ div > div.nav-Menu li,
+#nav-Checkbox:checked ~ div > div.nav-Menu a,
+#nav-Checkbox:checked ~ label#nav-Toggle #svg-close {
+  @apply block;
+}
+#nav-Checkbox:checked ~ label#nav-Toggle #svg-menu {
+  @apply hidden;
+}
+#nav-Checkbox:checked ~ div > div.nav-Menu {
+  @apply pb-4;
+  @apply block;
+}
+
+@media screen(sm) {
+  #nav-Checkbox:checked ~ div > div.hide-nav{
     @apply hidden;
   }
-  #nav-Checkbox:checked ~ div > div.nav-Menu {
-    @apply pb-4;
-    @apply block;
-  }
-
-  @media screen(sm) {
-    #nav-Checkbox:checked ~ div > div.hide-nav{
-      @apply hidden;
-    }
-  }
+}
 
 :root {
   --foreground-rgb: 0, 0, 0;

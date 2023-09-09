@@ -18,6 +18,7 @@ interface ResumeEntry {
   keypoints?: string[]
   dates?: string,
   bgColor?: string,
+  round?: string
 }
 
 interface ResumeSection {
@@ -41,7 +42,7 @@ function Hero() {
       <div className="hero-content text-center">
         <div className="max-w-prose">
           <h1 className="text-5xl font-bold">Full Stack Software Engineer</h1>
-          <p className="py-6">Currently working at CACI International building web apps with JavaScript/TypeScript, NodeJS, PostgreSQL and many other web technologies.</p>
+          <p className="py-6 font-medium">Currently working at CACI International building web apps with JavaScript/TypeScript, NodeJS, PostgreSQL and many other web technologies.</p>
         </div>
       </div>
     </div>
@@ -55,7 +56,7 @@ function Resume({ resume }: { resume: ResumeSection[] }) {
   }
   return (
     <div>
-      <ul>{sections}</ul>
+      <ul className="lg:px-8">{sections}</ul>
     </div>
   )
 }
@@ -66,8 +67,9 @@ function ResumeSection ({section}: {section: ResumeSection}) {
     entries.push(ResumeEntry({entry}))
   }
   return (
-    <li key={section.header} className="my-12 md:px-20">
-      <h2 className="mb-10 text-xl md:text-2xl highlight">{section.header}</h2>
+    <li key={section.header} className="my-12">
+      <h2 className="mb-2 text-xl md:text-4xl font-bold highlight">{section.header}</h2>
+      <hr className="mb-10 dark:border-gray-400"></hr>
       <ul className="section mx-8 relative border-l border-gray-200 dark:border-gray-700">{entries}</ul>
     </li>
   )
@@ -84,22 +86,24 @@ function ResumeEntry ({ entry }: {entry: ResumeEntry}) {
     <li className="mb-10 md:px-0 ml-6">
       <div className="flex items-center">
         {entry.image ?
-          <span className={`relative shrink-0 w-28 h-28 bg-${entry.bgColor} rounded-full left-[-79px] ring-4 ring-white dark:ring-gray-900 dark:bg-${entry.bgColor}`}>
-          {
-          entry.link && 
-            <a href={entry.link.toString()}>
+          <span className="relative flex items-center justify-center rounded-xl dark:bg-slate-900 shrink-0 w-28 h-28 left-[-80px]">
+            <span className={`relative shrink-0 w-20 h-20 bg-${entry.bgColor} ${entry.round ? 'rounded-' + entry.round : 'rounded-xl'}  dark:bg-${entry.bgColor}`}>
+            {
+            entry.link && 
+              <a href={entry.link.toString()}>
+                <Image fill={true} src={entry.image.toString()} alt={"Image for " + entry.header} />
+              </a> 
+            || 
               <Image fill={true} src={entry.image.toString()} alt={"Image for " + entry.header} />
-            </a> 
-          || 
-            <Image fill={true} src={entry.image.toString()} alt={"Image for " + entry.header} />
-          }
+            }
+            </span>
           </span> : 
           null
         }
         <div className="relative left-[-79px] w-full mx-8">
           <h3 className="mb-1 text-md md:text-xl font-semibold text-gray-900 dark:text-white">{entry.header}</h3>
           <hr className="invisible w-full" />
-          <h4 className="block mb-2 text-sm md:text-lg font-normal leading-none text-gray-400 dark:text-gray-500">{entry.subHeader}</h4>
+          <h4 className="block mb-2 text-sm md:text-lg font-semibold leading-none text-gray-400">{entry.subHeader}{entry.dates ? ' | ' + entry.dates : null}</h4>
         </div>
       </div>
       {points.length > 0 && <ul>{points}</ul>}
@@ -109,16 +113,16 @@ function ResumeEntry ({ entry }: {entry: ResumeEntry}) {
 
 function KeyPoint({ point }: {point: string}) {
   return (
-    <li className="my-8 mx-8"><span>{point}</span></li>
+    <li className="my-4 mx-8"><span>{point}</span></li>
   )
 }
 
 function Links({ hamburger }: {hamburger: boolean}) {
   return (
     <>
-      <div className={`${hamburger ? 'nav-Menu' : ''} hidden lg:m-0 mt-4 md:sticky md:flex md:flex-row w-full bottom-0 left-0  items-center lg:h-auto lg:bg-none`}>
+      <div className={`${hamburger ? 'nav-Menu' : ''} hidden lg:m-0 mt-4 md:top-0 md:flex md:flex-row w-full bottom-0 left-0  items-center lg:h-auto lg:bg-none`}>
         <a
-          className="pointer-events-none hidden md:block m-1 gap-0 md:gap-8 p-0 md:p-8 lg:pointer-events-auto "
+          className="pointer-events-none underline decoration-dotted hover:decoration-solid font-medium text-xl hidden md:block m-1 gap-0 md:gap-8 p-0 md:p-8 lg:pointer-events-auto "
           href="https://github.com/BrooklynWelsh"
           target="_blank"
           rel="noopener noreferrer"
@@ -126,7 +130,7 @@ function Links({ hamburger }: {hamburger: boolean}) {
           Github
         </a>
         <a
-          className="pointer-events-none hidden md:block m-1 gap-0 md:gap-8 p-0 md:p-8 lg:pointer-events-auto "
+          className="pointer-events-none font-medium underline decoration-dotted hover:decoration-solid text-xl hidden md:block m-1 gap-0 md:gap-8 p-0 md:p-8 lg:pointer-events-auto "
           href="https://www.linkedin.com/in/brooklyn-welsh"
           target="_blank"
           rel="noopener noreferrer"
@@ -134,7 +138,7 @@ function Links({ hamburger }: {hamburger: boolean}) {
           LinkedIn
         </a>
         <a
-          className="pointer-events-none hidden md:block m-1 gap-0 md:gap-8 p-0 md:p-8 lg:pointer-events-auto "
+          className="pointer-events-none font-medium text-xl underline decoration-dotted hover:decoration-solid hidden md:block m-1 gap-0 md:gap-8 p-0 md:p-8 lg:pointer-events-auto "
           href="mailto:brooklyn_welsh@outlook.com"
           target="_blank"
           rel="noopener noreferrer"
@@ -166,12 +170,12 @@ function HamburgerMenu() {
 
 function Nav() {
   return (
-    <div className="z-10 m-auto mb-10 flex-nowrap md:flex-wrap md:flex md:flex-col-reverse md:items-center lg:flex-row-reverse lg:flex-nowrap max-w-100 w-full h-15 justify-around font-mono text-sm">
+    <div className="z-10 dark:bg-blue-950 m-auto mb-10 flex-nowrap md:flex-wrap md:flex md:flex-col-reverse md:items-center sticky top-0 lg:flex-row-reverse lg:flex-nowrap max-w-100 w-full h-15 justify-between font-sans text-sm">
       <HamburgerMenu />
         <div className="flex flex-col md:flex-row items-center align-center justify-center">
           <ResumeIcon options={{filePath: "/headshot.jpg", altText:"Photo of Brooklyn Welsh", width: 125, rounded: true}}/>
           <div className="sticky p-8 w-auto flex items-center whitespace-nowrap">
-            <h1 className="text-3xl w-auto text-center highlight">Brooklyn Welsh</h1>
+            <h1 className="text-4xl font-metropolis font-semibold w-auto text-center highlight">Brooklyn Welsh</h1>
           </div>
         </div>
     </div>
@@ -180,7 +184,7 @@ function Nav() {
 
 export default async function Home() {
   return (
-    <main className="flex flex-col items-center justify-between p-10 dark:bg-stone-950 dark:text-gray-400">
+    <main className="font-metropolis font-regular text-lg flex flex-col items-center justify-between py-20 px-20 lg:px-52 dark:bg-blue-950 dark:text-gray-400">
       <Nav/>
       <Hero />
 
