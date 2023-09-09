@@ -17,7 +17,7 @@
             "Reduced development time and delivered features to customer early by creating a Svelte/SvelteKit web app which parsed a custom GDL language file into valid JSON, and displayed an interactive Echarts graph visualization.",
             "Improved code maintainability by implementing a large suite of unit and integration tests on an existing CACI project using Mocha and Sinon. Wrote Selenium tests to ensure functionality of the frontend.",
             "Supported an R&D contract by creating a suite of Python scripts which reads in a remote PostgreSQL Greenplum database schema and generates randomized queries categorized by runtime complexity, and runs them against the database while gathering performance data.",
-            "Updated the Webpack build system of inherited company project, deleted unnecessary plugins and configs, minified dependencies, and migrated from CSS to LESS, drastically reducing build times and repository size.",
+            "Implemented Gitlab CI/CD changes to run installation, testing, linting, and documentation generation steps in parallel, cutting pipeline run time and resource usage by ~50%.",
             "Stack: JavaScript, NodeJS, Python, PostgreSQL, Java"
         ],
           "dates": "Feb. 2021 - Present"
@@ -32,7 +32,7 @@
             "Ensured department Linux machines were up to date with latest security updates.",
             "Maintained department website, including backups, migrations, security, and all site updates.",
             "Wrote scripts in both Bash and Perl which were executed for every new user created on the machine as part of user account management.",
-            "Worked with in a team with one other intern to carry out any administration tasks set out by professor each week.",
+            "Worked as a team with one other intern to carry out any administration tasks set out by the professor each week.",
             "Languages/Tools used: Bash, Linux, Perl, PHP, Python, VirtualBox VM"
           ],
           "dates": "Aug.2019 - Nov. 2020"

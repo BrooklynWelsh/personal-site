@@ -180,11 +180,13 @@ function Nav() {
 
 export default async function Home() {
   return (
-    <main className="flex flex-col items-center justify-between p-10 dark:bg-zinc-950 dark:text-gray-400">
+    <main className="flex flex-col items-center justify-between p-10 dark:bg-stone-950 dark:text-gray-400">
       <Nav/>
       <Hero />
 
-      <p>Download PDF version of my resume here (not yet implemented)</p>
+      <a href="/resume.pdf" className="text-white bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-indigo-600 dark:hover:bg-indigo-700 focus:outline-none dark:focus:ring-indigo-800">
+        Download Resume
+      </a>
       <Resume resume={resumeData}/>
     </main>
   )
