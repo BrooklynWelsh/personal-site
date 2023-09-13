@@ -1,0 +1,3 @@
+[submodule "img-to-ascii"]
+	path = img-to-ascii
+	url = https://github.com/BrooklynWelsh/img-to-ascii
