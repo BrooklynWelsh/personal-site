@@ -58,6 +58,19 @@
       "header": "Personal Projects",
       "entries": [
         {
+          "header": "Image to ASCII Converter",
+          "image": "/react-ascii.png",
+          "bgColor": "black",
+          "link": "https://brooklynwelsh.github.io/img-to-ascii/",
+          "keypoints": [
+            "Made with React, NextJS, and TailwindCSS, allows user to scan any static image into ASCII art.",
+            "User can scale images for more or less resolution, and controll font size.",
+            "Offloads image processing to a Web Worker to keep UI responsive.",
+            "Controls connected to ASCII conversion using react state/props.",
+            "Completely responsive on all screen sizes."
+          ]
+        },
+        {
           "header": "Personal Website",
           "image": "/personal-site.png",
           "keypoints": [
@@ -77,6 +90,7 @@
             "(Upcoming) Will automatically email receipts to both the customer and the site owner."
           ]
         }
+
       ]
     }
   ]
