@@ -66,7 +66,7 @@
             "Made with React, NextJS, and TailwindCSS, allows user to scan any static image into ASCII art.",
             "User can scale images for more or less resolution, and control font size.",
             "Offloads image processing to a Web Worker to keep UI responsive.",
-            "Controls connected to ASCII conversion using react state/props.",
+            "Image controls (resolution, scaling) are connected to ASCII conversion script using react state/props.",
             "Completely responsive on all screen sizes."
           ]
         },
